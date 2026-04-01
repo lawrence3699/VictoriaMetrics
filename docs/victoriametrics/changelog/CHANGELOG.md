@@ -26,6 +26,8 @@ See also [LTS releases](https://docs.victoriametrics.com/victoriametrics/lts-rel
 
 ## tip
 
+* FEATURE: [vmalert](https://docs.victoriametrics.com/victoriametrics/vmalert/): expose `vmalert_remotewrite_sent_rows` and `vmalert_remotewrite_sent_bytes` histograms to provide better visibility into remote write request sizes.
+
 ## [v1.139.0](https://github.com/VictoriaMetrics/VictoriaMetrics/releases/tag/v1.139.0)
 
 Released at 2026-03-27
