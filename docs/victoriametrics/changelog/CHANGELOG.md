@@ -26,6 +26,8 @@ See also [LTS releases](https://docs.victoriametrics.com/victoriametrics/lts-rel
 
 ## tip
 
+* FEATURE: [vmalert](https://docs.victoriametrics.com/victoriametrics/vmalert/): add random jitter to concurrent periodical flushers targeting the remote write destination. This helps spread remote write flushes across the flush interval, avoiding congestion at the remote write destination and enhancing queue data consumption. See [#10729](https://github.com/VictoriaMetrics/VictoriaMetrics/pull/10729).
+
 ## [v1.139.0](https://github.com/VictoriaMetrics/VictoriaMetrics/releases/tag/v1.139.0)
 
 Released at 2026-03-27
