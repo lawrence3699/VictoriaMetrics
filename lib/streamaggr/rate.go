@@ -1,6 +1,7 @@
 package streamaggr
 
 import (
+	"math"
 	"sync"
 
 	"github.com/VictoriaMetrics/VictoriaMetrics/lib/bytesutil"
@@ -101,9 +102,9 @@ func (av *rateAggrValue) pushSample(_ aggrConfig, sample *pushSample, key string
 			// Skip out of order sample
 			return
 		}
-		if sample.value >= sv.value {
+		if sample.value > sv.value {
 			state.increase += sample.value - sv.value
-		} else {
+		} else if math.Abs(sample.value-sv.value) > 1e-9 {
 			// counter reset
 			state.increase += sample.value
 		}

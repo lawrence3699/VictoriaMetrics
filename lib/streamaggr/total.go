@@ -33,9 +33,9 @@ func (av *totalAggrValue) pushSample(c aggrConfig, sample *pushSample, key strin
 			// Skip out of order sample
 			return
 		}
-		if sample.value >= lv.value {
+		if sample.value > lv.value {
 			av.total += sample.value - lv.value
-		} else {
+		} else if math.Abs(sample.value-lv.value) > 1e-9 {
 			// counter reset
 			av.total += sample.value
 		}
